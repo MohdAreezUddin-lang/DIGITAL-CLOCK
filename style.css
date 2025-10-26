@@ -22,6 +22,7 @@ div {
   box-shadow: 0 0 25px #00ffcc, inset 0 0 15px #00ffaa;
   text-shadow: 0 0 10px #00ffaa, 0 0 20px #00ffcc;
   letter-spacing: 4px;
+  user-select: none;
   animation: glowPulse 2s infinite alternate;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
