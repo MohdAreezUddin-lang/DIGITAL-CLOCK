@@ -1,0 +1,72 @@
+/* Load a futuristic font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+body {
+  background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+}
+
+div {
+  color: #00ffcc;
+  font-size: clamp(2rem, 8vw, 6rem); /* 👈 responsive font */
+  background: rgba(0, 0, 0, 0.85);
+  padding: clamp(15px, 4vw, 40px) clamp(25px, 6vw, 60px); /* 👈 responsive padding */
+  border: 3px solid #00ffcc;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #00ffcc, inset 0 0 15px #00ffaa;
+  text-shadow: 0 0 10px #00ffaa, 0 0 20px #00ffcc;
+  letter-spacing: 4px;
+  animation: glowPulse 2s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  word-break: break-word;
+}
+
+div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00ffee, inset 0 0 25px #00ffcc;
+}
+
+/* Neon glow animation */
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px #00ffcc, 0 0 15px #00ffaa;
+  }
+  to {
+    text-shadow: 0 0 20px #00ffee, 0 0 30px #00ffaa;
+  }
+}
+
+/* Animated grid background */
+body::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #00ffaa10 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 8s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 40px 40px; }
+}
+
+/* 👇 Adjust for very small screens */
+@media (max-width: 400px) {
+  div {
+    border-width: 2px;
+    border-radius: 12px;
+    letter-spacing: 2px;
+  }
+}
